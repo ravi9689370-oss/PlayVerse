@@ -4,6 +4,10 @@
       <stop offset="0" stop-color="#2a1a5e"/>
       <stop offset="1" stop-color="#0d1030"/>
     </linearGradient>
+    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="6" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
   </defs>
   <rect width="400" height="300" fill="url(#bg)"/>
   <circle cx="330" cy="52" r="70" fill="#a78bfa" opacity="0.12"/>
@@ -12,5 +16,9 @@
   <circle cx="40" cy="48" r="10" fill="#ffffff" opacity="0.18"/>
   <circle cx="120" cy="90" r="5" fill="#ffffff" opacity="0.25"/>
   <circle cx="300" cy="150" r="7" fill="#ffffff" opacity="0.2"/>
-  <text x="200" y="186" font-size="118" text-anchor="middle" dominant-baseline="middle" style="font-family: 'Segoe UI Emoji','Noto Color Emoji',sans-serif">🚀</text>
-</svg>
+    <g filter="url(#glow)">
+      <rect x="118" y="88" width="76" height="94" rx="12" fill="#232345" stroke="#a78bfa" stroke-width="3" transform="rotate(-8 156 135)"/>
+      <rect x="206" y="88" width="76" height="94" rx="12" fill="#3b2a75" stroke="#a78bfa" stroke-width="3" transform="rotate(7 244 135)"/>
+      <path d="M244 116 l9 20 22 3 -16 15 4 22 -19 -11 -19 11 4 -22 -16 -15 22 -3 z" fill="#fde047" transform="rotate(7 244 135) translate(0 -4)"/>
+      <text x="156" y="150" font-size="42" text-anchor="middle" dominant-baseline="middle" fill="#a78bfa" font-family="sans-serif" font-weight="700" transform="rotate(-8 156 135)">?</text>
+    </g></svg>

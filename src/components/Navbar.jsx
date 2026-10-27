@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { Link, NavLink, useNavigate } from 'react-router-dom';
 import Logo from './Logo.jsx';
 import SearchBar from './SearchBar.jsx';
+import SearchIcon from './SearchIcon.jsx';
 import { useFavorites, useRecent } from '../hooks/useFavorites.js';
 
 const NAV_ITEMS = [
@@ -64,7 +65,7 @@ export default function Navbar() {
             setMenuOpen(false);
           }}
         >
-          🔍
+          <SearchIcon size={17} className="" />
         </button>
 
         <nav className="nav-links" aria-label="Primary">

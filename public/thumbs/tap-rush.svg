@@ -4,6 +4,10 @@
       <stop offset="0" stop-color="#3a1a1a"/>
       <stop offset="1" stop-color="#2a1010"/>
     </linearGradient>
+    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="6" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
   </defs>
   <rect width="400" height="300" fill="url(#bg)"/>
   <circle cx="330" cy="52" r="70" fill="#f87171" opacity="0.12"/>
@@ -12,5 +16,10 @@
   <circle cx="40" cy="48" r="10" fill="#ffffff" opacity="0.18"/>
   <circle cx="120" cy="90" r="5" fill="#ffffff" opacity="0.25"/>
   <circle cx="300" cy="150" r="7" fill="#ffffff" opacity="0.2"/>
-  <text x="200" y="186" font-size="118" text-anchor="middle" dominant-baseline="middle" style="font-family: 'Segoe UI Emoji','Noto Color Emoji',sans-serif">⚡</text>
-</svg>
+    <g filter="url(#glow)">
+      <circle cx="200" cy="142" r="58" fill="none" stroke="#f87171" stroke-width="3" opacity="0.35"/>
+      <circle cx="200" cy="142" r="40" fill="none" stroke="#f87171" stroke-width="3" opacity="0.55"/>
+      <circle cx="200" cy="142" r="24" fill="#f87171"/>
+      <circle cx="192" cy="134" r="8" fill="#ffffff" opacity="0.75"/>
+      <path d="M288 82 l-14 22 h11 l-9 20 24 -26 h-12 l10 -16 z" fill="#fbbf24"/>
+    </g></svg>

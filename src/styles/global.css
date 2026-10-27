@@ -257,8 +257,12 @@ button {
   background: none;
   border: none;
   color: var(--text-muted);
-  font-size: 1.15rem;
-  padding: 6px;
+  padding: 8px;
+  align-items: center;
+  justify-content: center;
+}
+.nav-search-btn:hover {
+  color: var(--text);
 }
 .mobile-menu {
   display: none;

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import SearchIcon from './SearchIcon.jsx';
 
 /** Shared search input used in the navbar, mobile row and the search page. */
 export default function SearchBar({ onSubmit, initialQuery = '', inputRef }) {
@@ -13,9 +14,7 @@ export default function SearchBar({ onSubmit, initialQuery = '', inputRef }) {
 
   return (
     <form className="searchbar" role="search" onSubmit={submit} ref={inputRef}>
-      <span className="search-icon" aria-hidden="true">
-        🔍
-      </span>
+      <SearchIcon />
       <input
         type="search"
         value={value}
