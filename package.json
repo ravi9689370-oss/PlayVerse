@@ -1,0 +1,31 @@
+{
+  "name": "playverse",
+  "private": true,
+  "version": "1.0.0",
+  "description": "PlayVerse - a responsive HTML5 gaming platform with playable original games, built with React + Vite and packaged for Android with Capacitor.",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "android:sync": "cap sync android",
+    "android:debug": "cd android && ./gradlew assembleDebug",
+    "generate:thumbs": "node scripts/generate-thumbs.mjs",
+    "generate:icons": "node scripts/generate-android-icons.mjs"
+  },
+  "dependencies": {
+    "@capacitor/android": "^6.2.1",
+    "@capacitor/core": "^6.2.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.30.1"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "^6.2.1",
+    "@vitejs/plugin-react": "^4.3.4",
+    "vite": "^5.4.19"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

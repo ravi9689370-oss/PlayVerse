@@ -1,0 +1,79 @@
+name: Android APK
+
+# Builds the PlayVerse debug APK. Can be triggered manually (workflow_dispatch)
+# and runs automatically when app source or Android configuration changes.
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'src/**'
+      - 'public/**'
+      - 'package.json'
+      - 'package-lock.json'
+      - 'vite.config.js'
+      - 'capacitor.config.json'
+      - 'index.html'
+      - 'android/**'
+      - '.github/workflows/android.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: Build PlayVerse debug APK
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Set up Java (Temurin 17)
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build web assets
+        run: npm run build
+
+      - name: Verify web output
+        run: |
+          test -f dist/index.html || { echo "::error::dist/index.html is missing - web build failed"; exit 1; }
+          test -s dist/index.html || { echo "::error::dist/index.html is empty"; exit 1; }
+          echo "Web assets verified:"
+          ls -la dist
+
+      - name: Sync Capacitor Android project
+        run: npx cap sync android
+
+      - name: Build debug APK (Gradle)
+        working-directory: android
+        run: |
+          chmod +x gradlew
+          ./gradlew assembleDebug --no-daemon --stacktrace
+
+      - name: Verify APK exists and is nonempty
+        run: |
+          APK=android/app/build/outputs/apk/debug/app-debug.apk
+          test -s "$APK" || { echo "::error::APK missing or empty at $APK"; exit 1; }
+          echo "APK verified: $(du -h "$APK" | cut -f1)"
+
+      - name: Upload APK artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: playverse-debug-apk
+          path: android/app/build/outputs/apk/debug/app-debug.apk
+          retention-days: 14
+          if-no-files-found: error

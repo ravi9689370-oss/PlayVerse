@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="1920" viewBox="0 0 1280 1920">
+  <defs>
+    <linearGradient id="sbg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#241a52"/>
+      <stop offset="0.55" stop-color="#12122a"/>
+      <stop offset="1" stop-color="#0a0a18"/>
+    </linearGradient>
+    <linearGradient id="sbadge" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#a78bfa"/>
+      <stop offset="1" stop-color="#22d3ee"/>
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="1920" fill="url(#sbg)"/>
+  <circle cx="1088" cy="230.39999999999998" r="204.8" fill="#8b5cf6" opacity="0.10"/>
+  <circle cx="153.6" cy="1632" r="153.6" fill="#22d3ee" opacity="0.08"/>
+  <rect x="525.76" y="807.36" width="228.48000000000005" height="228.48000000000005" rx="67.456" fill="url(#sbadge)"/>
+  <g transform="translate(640 915.072) scale(1.5776000000000001)"><path d="M -8 -30 L 8 -30 L 8 12 L -8 12 Z M 2 -30 L 12 -30 A 16 16 0 1 1 12 2 L 8 2 L 8 -30" fill="#0a0a18" fill-rule="evenodd"/></g>
+  <text x="640" y="1193.6" font-family="DejaVu Sans" font-weight="bold" font-size="108.80000000000001" fill="#ffffff" text-anchor="middle">Play<tspan fill="#a78bfa">Verse</tspan></text>
+</svg>
