@@ -114,7 +114,7 @@ export default function GameDetail() {
                 <div className="soon-icon" aria-hidden="true">🚧</div>
                 <h3>{game.title} is coming soon</h3>
                 <p>
-                  This catalog entry is still in development and is not playable yet. Meanwhile, the six
+                  This catalog entry is still in development and is not playable yet. Meanwhile, the seven
                   launched games are ready to play right now.
                 </p>
                 <Link to="/popular" className="btn btn-primary">Browse playable games</Link>

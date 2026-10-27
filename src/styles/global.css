@@ -279,17 +279,29 @@ button {
 }
 
 @media (max-width: 900px) {
+  .navbar-inner {
+    gap: 6px;
+    padding: 0 12px 0 16px;
+  }
   .nav-links {
     display: none;
   }
   .nav-burger {
     display: flex;
+    margin-left: 20px;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
   }
   .nav-search {
     display: none;
   }
   .nav-search-btn {
-    display: block;
+    display: flex;
+    margin-left: auto;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
   }
   .mobile-menu.open {
     display: flex;
@@ -603,7 +615,7 @@ button {
   border-bottom: 1px solid var(--border);
   flex-wrap: wrap;
 }
-.player-toolbar .tool-btn {
+.tool-btn {
   display: inline-flex;
   align-items: center;
   gap: 7px;
@@ -615,8 +627,12 @@ button {
   font-size: 0.85rem;
   font-weight: 600;
 }
-.player-toolbar .tool-btn:hover {
+.tool-btn:hover {
   background: var(--surface-3);
+}
+.tool-btn:disabled {
+  opacity: 0.5;
+  cursor: default;
 }
 .player-stage {
   position: relative;
@@ -832,6 +848,77 @@ canvas.game-canvas {
   font-size: 0.82rem;
   color: var(--text-faint);
   text-align: center;
+}
+
+/* ---------------- Neon Snake ---------------- */
+.snake-stage {
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+.snake-stage canvas.snake-canvas {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  background: #070712;
+  touch-action: none;
+}
+.snake-hint {
+  margin: 0;
+  max-width: 340px;
+  font-size: 0.8rem;
+  color: var(--text-faint);
+}
+.snake-dpad {
+  display: grid;
+  grid-template-columns: repeat(3, 58px);
+  grid-template-rows: repeat(2, 54px);
+  gap: 8px;
+  justify-content: center;
+  margin: 16px auto 2px;
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+.snake-dpad-btn {
+  border-radius: 12px;
+  border: 1px solid var(--border-strong);
+  background: linear-gradient(160deg, #232345, #15152c);
+  color: #d1fae5;
+  font-size: 1.35rem;
+  font-weight: 700;
+  line-height: 1;
+  cursor: pointer;
+  touch-action: none;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+}
+.snake-dpad-btn:hover {
+  border-color: var(--success);
+}
+.snake-dpad-btn:active {
+  transform: translateY(1px);
+  background: linear-gradient(160deg, #2f5a46, #1b2f28);
+  border-color: var(--success);
+}
+.dpad-up { grid-column: 2; grid-row: 1; }
+.dpad-left { grid-column: 1; grid-row: 2; }
+.dpad-down { grid-column: 2; grid-row: 2; }
+.dpad-right { grid-column: 3; grid-row: 2; }
+@media (max-width: 380px) {
+  .snake-dpad {
+    grid-template-columns: repeat(3, 50px);
+    grid-template-rows: repeat(2, 48px);
+    gap: 6px;
+  }
+  .snake-dpad-btn {
+    font-size: 1.2rem;
+  }
 }
 
 /* ---------------- Game detail page ---------------- */

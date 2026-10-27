@@ -10,7 +10,7 @@ A responsive HTML5 gaming platform built with **React + Vite**, featuring origin
 
 ## ✨ Features
 
-- **Six original playable games** - every game is designed and built in-house:
+- **Seven original playable games** - every game is designed and built in-house:
   | Game | Genre | Highlights |
   |---|---|---|
   | Cosmo Match | Memory | 4×4 pairs, move counter, timer, personal best |
@@ -19,6 +19,7 @@ A responsive HTML5 gaming platform built with **React + Vite**, featuring origin
   | Tile Blitz | Puzzle | Sliding puzzle (3×3 / 4×4), always-solvable shuffles |
   | Tic-Tac Glow | Casual | Heuristic AI opponent, running score tally |
   | Tap Rush | Action | 30-second reflex round, streak scoring |
+  | Neon Snake | Arcade | Grid snake, speed ramp, D-pad + swipe, personal best |
 - **Full site experience** - popular & new releases, category browsing, live search, game detail pages with instructions/controls, related games, prev/next navigation
 - **Local-first personalization** - favorites, recently played and best scores persist in browser storage (no accounts, no tracking)
 - **Game player shell** - restart, sound toggle (WebAudio SFX), fullscreen
@@ -38,6 +39,7 @@ npm ci          # install exact dependency versions
 npm run dev     # dev server with HMR
 npm run build   # production build -> dist/
 npm run preview # serve the production build
+npm test        # deterministic game-engine unit tests (Node, no browser needed)
 ```
 
 ## 📱 Android (Capacitor)
@@ -65,8 +67,8 @@ Branding assets (launcher icons, adaptive foreground, splash) are generated from
 ├── src/
 │   ├── components/             # Navbar, Footer, GameCard/Grid, states, error boundary
 │   ├── pages/                  # One file per route
-│   ├── games/                  # Six playable games + lazy registry
-│   ├── data/games.js           # Game catalog (16 entries) + categories + search
+│   ├── games/                  # Seven playable games, pure engines + lazy registry
+│   ├── data/games.js           # Game catalog (17 entries) + categories + search
 │   ├── hooks/                  # useFavorites/useRecent, useDocumentTitle
 │   ├── utils/                  # localStorage store, WebAudio sfx
 │   └── styles/global.css       # Design system
@@ -78,9 +80,10 @@ Branding assets (launcher icons, adaptive foreground, splash) are generated from
 ## 🧩 Adding a game
 
 1. Create `src/games/YourGame.jsx` (self-contained, with restart + completion state).
-2. Register it in `src/games/registry.js`.
-3. Add its catalog entry to `src/data/games.js` with `launchType: 'internal'`.
-4. Add a thumbnail to `public/thumbs/` (or extend `scripts/generate-thumbs.mjs`).
+2. Put deterministic rules in `src/games/engines/` and cover them in `scripts/test-engines.mjs`.
+3. Register it in `src/games/registry.js`.
+4. Add its catalog entry to `src/data/games.js` with `launchType: 'internal'`.
+5. Add a thumbnail to `public/thumbs/` (or extend `scripts/generate-thumbs.mjs`).
 
 ## 🔒 Privacy
 

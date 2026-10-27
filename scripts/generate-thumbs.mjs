@@ -17,6 +17,7 @@ const ART = {
   'tile-blitz':       ['#14404a', '#0a2030', '#34d399', 'tiles'],
   'tictac-glow':      ['#403a1a', '#2a2010', '#fbbf24', 'tictac'],
   'tap-rush':         ['#3a1a1a', '#2a1010', '#f87171', 'rush'],
+  'neon-snake':       ['#103a2e', '#08160f', '#34d399', 'snake'],
   'rocket-run':       ['#2a1a5e', '#101030', '#c084fc', 'soon'],
   'cube-hopper':      ['#1a3a5e', '#0c1830', '#60a5fa', 'soon'],
   'pixel-snake-3000': ['#14401f', '#0a2412', '#4ade80', 'soon'],
@@ -96,6 +97,19 @@ const SCENES = {
       <circle cx="200" cy="142" r="24" fill="{ACCENT}"/>
       <circle cx="192" cy="134" r="8" fill="#ffffff" opacity="0.75"/>
       <path d="M288 82 l-14 22 h11 l-9 20 24 -26 h-12 l10 -16 z" fill="#fbbf24"/>
+    </g>`,
+  snake: `
+    <g filter="url(#glow)">
+      <rect x="108" y="76" width="184" height="148" rx="12" fill="#07130d" stroke="{ACCENT}" stroke-width="2" opacity="0.92"/>
+      <rect x="172" y="144" width="22" height="18" rx="5" fill="{ACCENT}" opacity="0.45"/>
+      <rect x="172" y="126" width="22" height="18" rx="5" fill="{ACCENT}" opacity="0.6"/>
+      <rect x="172" y="108" width="22" height="18" rx="5" fill="{ACCENT}" opacity="0.75"/>
+      <rect x="150" y="108" width="22" height="18" rx="5" fill="{ACCENT}" opacity="0.9"/>
+      <rect x="128" y="108" width="22" height="18" rx="5" fill="#6ee7b7"/>
+      <circle cx="133" cy="113" r="2.4" fill="#062f22"/>
+      <circle cx="133" cy="121" r="2.4" fill="#062f22"/>
+      <circle cx="240" cy="103" r="10" fill="#f472b6"/>
+      <circle cx="237" cy="100" r="3.2" fill="#ffffff" opacity="0.75"/>
     </g>`,
   soon: `
     <g filter="url(#glow)" opacity="0.9">

@@ -120,6 +120,23 @@ export const GAMES = [
     updatedAt: '2026-10-23T12:00:00Z',
     popularityRank: 6,
   }),
+  g({
+    id: 'pv-007',
+    slug: 'neon-snake',
+    title: 'Neon Snake',
+    description: 'Guide a glowing snake across a neon grid, eat plasma orbs and grow longer without hitting the walls or your own tail.',
+    category: 'arcade',
+    thumbnail: '/thumbs/neon-snake.svg',
+    launchType: 'internal',
+    componentKey: 'NeonSnake',
+    launchUrl: null,
+    instructions: 'Steer the snake toward plasma orbs. Each orb scores 10 points, grows the snake and speeds it up. Hitting a wall or your own tail ends the run.',
+    controls: 'Desktop: Arrow keys or WASD. Touch: swipe on the board or use the on-screen D-pad. P pauses; Space starts, resumes or restarts.',
+    published: true,
+    createdAt: '2026-10-26T09:00:00Z',
+    updatedAt: '2026-10-26T09:00:00Z',
+    popularityRank: 7,
+  }),
 
   // ---------------- Catalog entries in development (clearly marked) ----------------
   g({

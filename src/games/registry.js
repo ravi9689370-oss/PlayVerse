@@ -8,4 +8,5 @@ export const GAME_COMPONENTS = {
   TileBlitz: lazy(() => import('./TileBlitz.jsx')),
   TicTacGlow: lazy(() => import('./TicTacGlow.jsx')),
   TapRush: lazy(() => import('./TapRush.jsx')),
+  NeonSnake: lazy(() => import('./NeonSnake.jsx')),
 };
